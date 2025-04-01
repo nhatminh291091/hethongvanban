@@ -3,60 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Đăng nhập</title>
+  <title>Đăng ký tài khoản</title>
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f2f4f8;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      background-color: #1e3a8a;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #f87171;
-    }
-
-    .container {
-      max-width: 400px;
-      margin: 60px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
       text-align: center;
-      color: #1e3a8a;
-      margin-bottom: 20px;
     }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px;
       border-radius: 8px;
+      border: 1px solid #ccc;
     }
-
     button {
-      width: 100%;
-      padding: 12px;
+      padding: 10px 20px;
       background-color: #2563eb;
       color: white;
       border: none;
@@ -64,25 +27,36 @@
       font-weight: bold;
       cursor: pointer;
     }
-
     button:hover {
       background-color: #1e40af;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="tracuu.html">Tra cứu văn bản</a>
-    <a href="dangky.html">Đăng ký tài khoản</a>
-    <a href="dangnhap.html">Đăng nhập</a>
-  </nav>
+  <h2>Đăng ký tài khoản</h2>
+  <form id="registerForm">
+    <input type="text" id="username" placeholder="Tên đăng nhập" required><br>
+    <input type="password" id="password" placeholder="Mật khẩu" required><br>
+    <button type="submit">Đăng ký</button>
+  </form>
+  <p id="response"></p>
 
-  <div class="container">
-    <h1>Đăng nhập</h1>
-    <input type="text" placeholder="Tên đăng nhập" />
-    <input type="password" placeholder="Mật khẩu" />
-    <button>Đăng nhập</button>
-  </div>
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      fetch("https://script.google.com/macros/s/AKfycbzP28UIak9EL1qIJ3RsVnru_OZHh05y-IosneR7bqJ9RngyLl9z9Gffc6pwF73ruOO3/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("response").innerText = data;
+      });
+    });
+  </script>
 </body>
 </html>
