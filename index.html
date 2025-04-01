@@ -14,20 +14,38 @@
       padding: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f2f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
     }
 
+    /* Navbar */
+    nav {
+      background-color: #1e3a8a;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f87171; /* đỏ nhạt */
+    }
+
+    /* Nội dung chính */
     .container {
-      background: #fff;
+      background: #ffffff;
       padding: 40px 30px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      text-align: center;
       max-width: 500px;
       width: 90%;
+      margin: 40px auto;
+      text-align: center;
     }
 
     .logo {
@@ -36,13 +54,13 @@
     }
 
     h1 {
-      color: #1e3a8a;
       font-size: 24px;
       margin-bottom: 15px;
+      color: #1e3a8a;
     }
 
     p {
-      color: #374151;
+      color: #4b5563;
       font-size: 16px;
       margin-bottom: 25px;
     }
@@ -50,12 +68,15 @@
     a.button {
       display: inline-block;
       padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
       background-color: #2563eb;
       color: white;
-      text-decoration: none;
-      font-weight: bold;
+      border: none;
       border-radius: 8px;
+      text-decoration: none;
       transition: background-color 0.3s ease;
+      margin-top: 10px;
     }
 
     a.button:hover {
@@ -65,21 +86,33 @@
     footer {
       margin-top: 30px;
       font-size: 13px;
-      color: #9ca3af;
+      text-align: center;
+      color: #6b7280;
     }
   </style>
 </head>
 <body>
+  <!-- Thanh điều hướng -->
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="tracuu.html">Tra cứu văn bản</a>
+    <a href="dangky.html">Đăng ký tài khoản</a>
+    <a href="dangnhap.html">Đăng nhập</a>
+  </nav>
+
+  <!-- Nội dung trang -->
   <div class="container">
     <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Emblem_of_Vietnam.svg/512px-Emblem_of_Vietnam.svg.png" alt="Logo quốc huy" />
 
     <h1>Hệ thống Văn bản hiện hành</h1>
-    <p>Trang tổng hợp các văn bản pháp luật, quy định nội bộ và hướng dẫn nghiệp vụ đang áp dụng tại đơn vị.</p>
+    <p>Trang thông tin truy cập nhanh đến các văn bản pháp luật, quy định nội bộ và hướng dẫn đang được đơn vị áp dụng.</p>
 
-    <a class="button" href="https://drive.google.com/drive/folders/1AbCdEfGhIjKlmnOpQrStUvWxYz" target="_blank">Truy cập thư mục văn bản</a>
+    <a class="button" href="https://drive.google.com/drive/folders/1AbCdEfGhIjKlmnOpQrStUvWxYz" target="_blank">
+      Truy cập thư mục văn bản
+    </a>
 
     <footer>
-      &copy; 2025 - Đơn vị bạn | Phát triển bởi GitHub Pages
+      &copy; 2025 - Đơn vị của bạn | Powered by GitHub Pages
     </footer>
   </div>
 </body>
